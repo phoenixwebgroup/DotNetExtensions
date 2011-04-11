@@ -2,14 +2,9 @@
 {
 	using System;
 	using System.Globalization;
-	using System.Text.RegularExpressions;
 
 	public static class ParsingExtensions
 	{
-		public const string GuidRegex = "^[A-Fa-f0-9]{32}$|" +
-		                                "^({|\\()?[A-Fa-f0-9]{8}-([A-Fa-f0-9]{4}-){3}[A-Fa-f0-9]{12}(}|\\))?$|" +
-		                                "^({)?[0xA-Fa-f0-9]{3,10}(, {0,1}[0xA-Fa-f0-9]{3,6}){2}, {0,1}({)([0xA-Fa-f0-9]{3,4}, {0,1}){7}[0xA-Fa-f0-9]{3,4}(}})$";
-
 		/// <summary>
 		/// 	This method converts an object to the specified non-nullable type if it is not null, otherwise it returns null
 		/// 	if the conversion fails or the object is null to begin with.
@@ -244,6 +239,10 @@
 			return null;
 		}
 
+		/// <summary>
+		/// "0" is treated as false
+		/// "1" is treated as true
+		/// </summary>
 		public static bool? ParseBoolean(this object value)
 		{
 			if (value != null)
@@ -271,6 +270,9 @@
 			return null;
 		}
 
+		/// <summary>
+		///		Convert a string to a character or null if it's not a charater.
+		/// </summary>
 		public static char? ParseChar(this string input)
 		{
 			char newChar;
@@ -282,10 +284,8 @@
 		}
 
 		/// <summary>
-		/// 	This method calls ToString on the object if it is not null, otherwise it returns null
+		/// 	null safe ToString()
 		/// </summary>
-		/// <param name = "value"></param>
-		/// <returns></returns>
 		public static string ParseString(this object value)
 		{
 			if (value == null)
@@ -296,10 +296,6 @@
 			return value.ToString();
 		}
 
-		/// <summary>
-		/// 	Parse text into a guid by checking it against a regular expression.
-		/// </summary>
-		/// <returns></returns>
 		public static Guid? ParseGuid(this object value)
 		{
 			if (value != null)
@@ -307,10 +303,10 @@
 				var text = value.ToString();
 				if (!String.IsNullOrEmpty(text))
 				{
-					var format = new Regex(GuidRegex);
-					if (format.Match(text).Success)
+					Guid parsed;
+					if (Guid.TryParse(text, out parsed))
 					{
-						return new Guid(text);
+						return parsed;
 					}
 				}
 			}
