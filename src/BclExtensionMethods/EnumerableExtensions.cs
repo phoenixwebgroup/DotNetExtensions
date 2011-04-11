@@ -50,5 +50,34 @@ namespace BclExtensionMethods
 		{
 			return source.SkipWhile(item => !endCondition(item));
 		}
+
+		/// <summary>
+		/// 	Skip null items, null safe on source enumerable too.
+		/// </summary>
+		/// <typeparam name = "T"></typeparam>
+		/// <param name = "source"></param>
+		/// <returns></returns>
+		public static IEnumerable<T> IgnoreNulls<T>(this IEnumerable<T> source)
+		{
+			if (ReferenceEquals(source, null))
+			{
+				yield break;
+			}
+
+			foreach (var item in source.Where(item => !ReferenceEquals(item, null)))
+			{
+				yield return item;
+			}
+		}
+
+		public static string StringJoin<T>(this IEnumerable<T> source, string separator)
+		{
+			if (source.IsEmpty())
+			{
+				return null;
+			}
+			var strings = source.Select(l => l.ToString()).ToArray();
+			return string.Join(separator, strings);
+		}
 	}
 }

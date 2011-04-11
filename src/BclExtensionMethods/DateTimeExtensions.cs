@@ -1,13 +1,14 @@
 namespace BclExtensionMethods
 {
 	using System;
+	using System.Linq;
+	using System.Text;
 
 	public static class DateTimeExtensions
 	{
 		/// <summary>
-		/// Most of this are modified from ideas on http://www.extensionmethod.net
+		/// 	Most of this are modified from ideas on http://www.extensionmethod.net
 		/// </summary>
-
 		public static bool IsWeekend(this DateTime date)
 		{
 			return date.DayOfWeek == DayOfWeek.Sunday
@@ -22,6 +23,12 @@ namespace BclExtensionMethods
 		public static DateTime FirstDayOfTheMonth(this DateTime date)
 		{
 			return new DateTime(date.Year, date.Month, 1);
+		}
+
+		public static DateTime LastDayOfTheMonth(this DateTime date)
+		{
+			var lastDayOfMonth = DateTime.DaysInMonth(date.Year, date.Month);
+			return new DateTime(date.Year, date.Month, lastDayOfMonth);
 		}
 
 		/// <summary>
@@ -54,6 +61,17 @@ namespace BclExtensionMethods
 				return date.AddDays(-2);
 			}
 			return date.AddDays(-1);
+		}
+
+		/// <summary>
+		/// 	Repeat a string a specified number of times
+		/// </summary>
+		public static string Repeat(this string source, int count)
+		{
+			var builder = new StringBuilder();
+			Enumerable.Repeat(source, count)
+				.Select(builder.Append);
+			return builder.ToString();
 		}
 	}
 }
