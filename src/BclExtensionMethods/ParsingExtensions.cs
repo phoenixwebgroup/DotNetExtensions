@@ -4,38 +4,32 @@
 	using System.Globalization;
 	using System.Text.RegularExpressions;
 
-	public static class Parsers
+	public static class ParsingExtensions
 	{
-		#region Constants
-
 		public const string GuidRegex = "^[A-Fa-f0-9]{32}$|" +
-					"^({|\\()?[A-Fa-f0-9]{8}-([A-Fa-f0-9]{4}-){3}[A-Fa-f0-9]{12}(}|\\))?$|" +
-					"^({)?[0xA-Fa-f0-9]{3,10}(, {0,1}[0xA-Fa-f0-9]{3,6}){2}, {0,1}({)([0xA-Fa-f0-9]{3,4}, {0,1}){7}[0xA-Fa-f0-9]{3,4}(}})$";
-
-		#endregion
-
-		#region Methods
+		                                "^({|\\()?[A-Fa-f0-9]{8}-([A-Fa-f0-9]{4}-){3}[A-Fa-f0-9]{12}(}|\\))?$|" +
+		                                "^({)?[0xA-Fa-f0-9]{3,10}(, {0,1}[0xA-Fa-f0-9]{3,6}){2}, {0,1}({)([0xA-Fa-f0-9]{3,4}, {0,1}){7}[0xA-Fa-f0-9]{3,4}(}})$";
 
 		/// <summary>
-		/// This method converts an object to the specified non-nullable type if it is not null, otherwise it returns null
-		/// if the conversion fails or the object is null to begin with.
-		/// Acceptable types include (byte, short, int, long, double, decimal, and DateTime).
+		/// 	This method converts an object to the specified non-nullable type if it is not null, otherwise it returns null
+		/// 	if the conversion fails or the object is null to begin with.
+		/// 	Acceptable types include (byte, short, int, long, double, decimal, and DateTime).
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="value"></param>
+		/// <typeparam name = "T"></typeparam>
+		/// <param name = "value"></param>
 		/// <returns></returns>
 		public static T? Parse<T>(this object value) where T : struct, IConvertible
 		{
-			return Parsers.ParseValue<T>(value);
+			return ParseValue<T>(value);
 		}
 
 		/// <summary>
-		/// This method converts an object to the specified non-nullable type if it is not null, otherwise it returns null
-		/// if the conversion fails or the object is null to begin with.
-		/// Acceptable types include (byte, short, int, long, double, decimal, and DateTime).
+		/// 	This method converts an object to the specified non-nullable type if it is not null, otherwise it returns null
+		/// 	if the conversion fails or the object is null to begin with.
+		/// 	Acceptable types include (byte, short, int, long, double, decimal, and DateTime).
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="value"></param>
+		/// <typeparam name = "T"></typeparam>
+		/// <param name = "value"></param>
 		/// <returns></returns>
 		public static T? ParseValue<T>(object value) where T : struct, IConvertible
 		{
@@ -43,12 +37,12 @@
 		}
 
 		/// <summary>
-		/// Parse a value from the object type to the specified output type.
-		/// Acceptable types include (byte, short, int, long, double, decimal, and DateTime).
+		/// 	Parse a value from the object type to the specified output type.
+		/// 	Acceptable types include (byte, short, int, long, double, decimal, and DateTime).
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="value"></param>
-		/// <param name="culture"></param>
+		/// <typeparam name = "T"></typeparam>
+		/// <param name = "value"></param>
+		/// <param name = "culture"></param>
 		/// <returns></returns>
 		public static T? ParseValue<T>(object value, CultureInfo culture) where T : struct, IConvertible
 		{
@@ -58,7 +52,7 @@
 			}
 
 			object tempResult = null;
-			T result = default(T);
+			var result = default(T);
 			if (result is byte)
 			{
 				tempResult = value.ParseByte();
@@ -90,7 +84,7 @@
 
 			if (tempResult != null)
 			{
-				return (T)Convert.ChangeType(tempResult, typeof(T), culture);
+				return (T) Convert.ChangeType(tempResult, typeof (T), culture);
 			}
 
 			return null;
@@ -108,9 +102,9 @@
 				byte temp;
 				if (input is byte)
 				{
-					return (byte?)input;
+					return (byte?) input;
 				}
-				else if (byte.TryParse(input.ToString(), style, provider, out temp))
+				if (byte.TryParse(input.ToString(), style, provider, out temp))
 				{
 					return temp;
 				}
@@ -130,9 +124,9 @@
 				short temp;
 				if (input is short)
 				{
-					return (short?)input;
+					return (short?) input;
 				}
-				else if (short.TryParse(input.ToString(), style, provider, out temp))
+				if (short.TryParse(input.ToString(), style, provider, out temp))
 				{
 					return temp;
 				}
@@ -144,7 +138,7 @@
 		{
 			return input.ParseInt(NumberStyles.Any, CultureInfo.CurrentUICulture.NumberFormat);
 		}
-		
+
 		public static int? ParseInt(this object input, NumberStyles style, IFormatProvider provider)
 		{
 			if (input != null)
@@ -152,9 +146,9 @@
 				int temp;
 				if (input is int)
 				{
-					return (int?)input;
+					return (int?) input;
 				}
-				else if (int.TryParse(input.ToString(), style, provider, out temp))
+				if (int.TryParse(input.ToString(), style, provider, out temp))
 				{
 					return temp;
 				}
@@ -174,9 +168,9 @@
 				long temp;
 				if (input is long)
 				{
-					return (long?)input;
+					return (long?) input;
 				}
-				else if (long.TryParse(input.ToString(), style, provider, out temp))
+				if (long.TryParse(input.ToString(), style, provider, out temp))
 				{
 					return temp;
 				}
@@ -196,9 +190,9 @@
 				double temp;
 				if (input is double)
 				{
-					return (double?)input;
+					return (double?) input;
 				}
-				else if (double.TryParse(input.ToString(), style, provider, out temp))
+				if (double.TryParse(input.ToString(), style, provider, out temp))
 				{
 					return temp;
 				}
@@ -218,9 +212,9 @@
 				decimal temp;
 				if (input is decimal)
 				{
-					return (decimal?)input;
+					return (decimal?) input;
 				}
-				else if (decimal.TryParse(input.ToString(), style, provider, out temp))
+				if (decimal.TryParse(input.ToString(), style, provider, out temp))
 				{
 					return temp;
 				}
@@ -240,9 +234,9 @@
 				DateTime temp;
 				if (date is DateTime)
 				{
-					return (DateTime?)date;
+					return (DateTime?) date;
 				}
-				else if (DateTime.TryParse(date.ToString(), provider, styles, out temp))
+				if (DateTime.TryParse(date.ToString(), provider, styles, out temp))
 				{
 					return temp;
 				}
@@ -256,20 +250,20 @@
 			{
 				if (value is bool)
 				{
-					return (bool?)value;
+					return (bool?) value;
 				}
 
 				bool temp;
-				string valueString = value.ToString();
+				var valueString = value.ToString();
 				if (bool.TryParse(valueString, out temp))
 				{
 					return temp;
 				}
-				else if (valueString == "0")
+				if (valueString == "0")
 				{
 					return false;
 				}
-				else if (valueString == "1")
+				if (valueString == "1")
 				{
 					return true;
 				}
@@ -288,9 +282,9 @@
 		}
 
 		/// <summary>
-		/// This method calls ToString on the object if it is not null, otherwise it returns null
+		/// 	This method calls ToString on the object if it is not null, otherwise it returns null
 		/// </summary>
-		/// <param name="value"></param>
+		/// <param name = "value"></param>
 		/// <returns></returns>
 		public static string ParseString(this object value)
 		{
@@ -303,18 +297,17 @@
 		}
 
 		/// <summary>
-		/// Parse text into a guid by checking it against a regular expression. 
+		/// 	Parse text into a guid by checking it against a regular expression.
 		/// </summary>
-		/// <param name="text"></param>
 		/// <returns></returns>
 		public static Guid? ParseGuid(this object value)
 		{
 			if (value != null)
 			{
-				string text = value.ToString();
+				var text = value.ToString();
 				if (!String.IsNullOrEmpty(text))
 				{
-					Regex format = new Regex(GuidRegex);
+					var format = new Regex(GuidRegex);
 					if (format.Match(text).Success)
 					{
 						return new Guid(text);
@@ -323,7 +316,5 @@
 			}
 			return null;
 		}
-
-		#endregion
 	}
 }
