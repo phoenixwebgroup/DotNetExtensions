@@ -312,5 +312,21 @@
 			}
 			return null;
 		}
+
+		public static T? ParseEnumValue<T>(this string name) where T : struct, IConvertible
+		{
+			try
+			{
+				return (T)Enum.Parse(typeof(T), name);
+			}
+			catch (ArgumentException)
+			{
+				return null;
+			}
+			catch (OverflowException)
+			{
+				return null;
+			}
+		}
 	}
 }
