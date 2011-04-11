@@ -5,6 +5,12 @@ namespace BclExtensionMethods
 
 	public static class InExtensions
 	{
+		public static bool In<T>(this T source, params T[] list)
+		{
+			return source != null 
+				&& list.Contains(source);
+		}
+
 		public static bool In(this Enum value, params Enum[] values)
 		{
 			return values.Any(current => current.CompareTo(value) == 0);
