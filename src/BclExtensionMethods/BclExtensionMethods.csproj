@@ -42,9 +42,11 @@
   <ItemGroup>
     <Compile Include="Dates.cs" />
     <Compile Include="DateTimeExtensions.cs" />
+    <Compile Include="DictionaryExtensions.cs" />
     <Compile Include="Email\EmailExtensions.cs" />
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="EnumExtensions.cs" />
+    <Compile Include="Files\FileExtensions.cs" />
     <Compile Include="InExtensions.cs" />
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="ParsingExtensions.cs" />
