@@ -26,12 +26,22 @@ namespace BclExtensionMethods
 			return truncatedString + suffix;
 		}
 
-		public static bool IsNeitherNullNorEmpty(this string input)
+		public static bool IsNullOrEmpty(this string input)
+		{
+			return String.IsNullOrEmpty(input);
+		}
+
+		public static bool IsNullOrWhiteSpace(this string input)
+		{
+			return String.IsNullOrWhiteSpace(input);
+		}
+
+		public static bool IsNotNullOrEmpty(this string input)
 		{
 			return !String.IsNullOrEmpty(input);
 		}
 
-		public static bool IsNeitherNullNorWhiteSpace(this string input)
+		public static bool IsNotNullOrWhiteSpace(this string input)
 		{
 			return !String.IsNullOrWhiteSpace(input);
 		}
