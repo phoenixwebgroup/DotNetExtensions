@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PartitionExtensions.cs" />
-    <Compile Include="Dates.cs" />
+    <Compile Include="Days.cs" />
     <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="DictionaryExtensions.cs" />
     <Compile Include="DisposableExtesions.cs" />
