@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BclExtensionMethods", "BclExtensionMethods\BclExtensionMethods.csproj", "{01AF3B5D-2660-4C1C-9B89-46AA4FC8CD99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BclExtensionMethods", "src\BclExtensionMethods\BclExtensionMethods.csproj", "{01AF3B5D-2660-4C1C-9B89-46AA4FC8CD99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BclExtensionMethodTests", "BclExtensionMethodTests\BclExtensionMethodTests.csproj", "{BCDECFA6-7F10-4941-BFC7-8BD564DE5E1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BclExtensionMethodTests", "src\BclExtensionMethodTests\BclExtensionMethodTests.csproj", "{BCDECFA6-7F10-4941-BFC7-8BD564DE5E1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
