@@ -62,16 +62,5 @@ namespace BclExtensionMethods
 			}
 			return date.AddDays(-1);
 		}
-
-		/// <summary>
-		/// 	Repeat a string a specified number of times
-		/// </summary>
-		public static string Repeat(this string source, int count)
-		{
-			var builder = new StringBuilder();
-			Enumerable.Repeat(source, count)
-				.Select(builder.Append);
-			return builder.ToString();
-		}
 	}
 }

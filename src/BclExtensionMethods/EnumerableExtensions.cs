@@ -11,6 +11,10 @@ namespace BclExtensionMethods
 		/// </summary>
 		public static void ForEach<TSource>(this IEnumerable<TSource> source, Action<TSource> action)
 		{
+			if (source == null)
+			{
+				return;
+			}
 			foreach (var item in source)
 			{
 				action(item);
@@ -76,7 +80,7 @@ namespace BclExtensionMethods
 			{
 				return null;
 			}
-			var strings = source.Select(l => l.ToString()).ToArray();
+			var strings = source.Select(l => l.ToString());
 			return string.Join(separator, strings);
 		}
 	}

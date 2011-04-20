@@ -4,10 +4,12 @@ namespace BclExtensionMethods.Email
 
 	public static class EmailExtensions
 	{
-		public static bool IsValidEmailAddress(this string s)
+		public static string EmailValidationRegex = @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
+
+		public static bool IsValidEmailAddress(this string source)
 		{
-			var regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
-			return regex.IsMatch(s);
+			var regex = new Regex(EmailValidationRegex);
+			return regex.IsMatch(source);
 		}
 	}
 }

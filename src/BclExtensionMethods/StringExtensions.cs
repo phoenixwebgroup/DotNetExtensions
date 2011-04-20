@@ -2,6 +2,7 @@ namespace BclExtensionMethods
 {
 	using System;
 	using System.Linq;
+	using System.Text;
 
 	public static class StringExtensions
 	{
@@ -54,6 +55,17 @@ namespace BclExtensionMethods
 		public static string RemoveAll(this string input, params string[] stringsToRemove)
 		{
 			return stringsToRemove.Aggregate(input, (current, c) => current.Replace(c, string.Empty));
+		}
+
+		/// <summary>
+		/// 	Repeat a string a specified number of times
+		/// </summary>
+		public static string Repeat(this string source, int count)
+		{
+			var builder = new StringBuilder();
+			Enumerable.Repeat(source, count)
+				.Select(builder.Append);
+			return builder.ToString();
 		}
 	}
 }

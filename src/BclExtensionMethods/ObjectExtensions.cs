@@ -1,15 +1,19 @@
 namespace BclExtensionMethods
 {
-	using System;
-
 	public static class ObjectExtensions
 	{
+		/// <summary>
+		/// 	For readability only
+		/// </summary>
 		public static bool IsNull<T>(this T instance)
 			where T : class
 		{
 			return instance == null;
 		}
 
+		/// <summary>
+		/// 	For readability only
+		/// </summary>
 		public static bool IsNotNull<T>(this T instance)
 			where T : class
 		{
@@ -17,7 +21,7 @@ namespace BclExtensionMethods
 		}
 
 		/// <summary>
-		/// 	!instance.Equals(other)
+		/// 	!instance.Equals(other), for readability
 		/// </summary>
 		public static bool NotEquals(this object instance, object other)
 		{
@@ -25,27 +29,11 @@ namespace BclExtensionMethods
 		}
 
 		/// <summary>
-		/// 	!(instance is T)
+		/// 	!(instance is T), for readability
 		/// </summary>
 		public static bool IsNot<T>(this object instance)
 		{
 			return !(instance is T);
-		}
-	}
-
-	public static class DisposableExtesions
-	{
-		/// <summary>
-		/// 	null safe dispose
-		/// </summary>
-		public static void TryDispose(IDisposable disposable)
-		{
-			if (disposable == null)
-			{
-				return;
-			}
-
-			disposable.Dispose();
 		}
 	}
 }
