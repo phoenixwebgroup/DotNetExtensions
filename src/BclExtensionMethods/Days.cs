@@ -15,9 +15,15 @@
 			get { return DateTime.Today.AddDays(-1); }
 		}
 
-		/// <summary>
-		/// 	Returns an infinite day stream backwards (inclusive) from the startDate
-		/// </summary>
+		///<summary>
+		///	Returns an infinite day stream backwards (inclusive) from the startDate
+		///	<example>
+		///		<code>
+		///			Days.BackwardsFrom(DateTime.Today)
+		///			.Take(NumberOfDays)
+		///		</code>
+		///	</example>
+		///</summary>
 		public static IEnumerable<DateTime> BackwardsFrom(DateTime startDate)
 		{
 			while (true)
@@ -27,9 +33,15 @@
 			}
 		}
 
-		/// <summary>
-		/// 	Returns an infinite day stream forwards (inclusive) from the startDate
-		/// </summary>
+		///<summary>
+		///	Returns an infinite day stream forwards (inclusive) from the startDate
+		///	<example>
+		///		<code>
+		///			Days.ForwardsFrom(DateTime.Today)
+		///			.Take(NumberOfDays)
+		///		</code>
+		///	</example>
+		///</summary>
 		public static IEnumerable<DateTime> ForwardsFrom(DateTime startDate)
 		{
 			while (true)
