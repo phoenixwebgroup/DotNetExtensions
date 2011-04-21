@@ -105,6 +105,10 @@
 		/// <param name="relativeYear">Defaults to use DateTime.Today.Year</param>
 		public static ContractMonth? FromRelativeInput(string input, int? relativeYear = null)
 		{
+			if (string.IsNullOrWhiteSpace(input))
+			{
+				return null;
+			}
 			var match = MonthYearRegex.Match(input);
 			if (!match.Success)
 			{
