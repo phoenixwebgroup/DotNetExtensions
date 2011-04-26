@@ -1,8 +1,6 @@
 namespace BclExtensionMethods
 {
 	using System;
-	using System.Linq;
-	using System.Text;
 
 	public static class DateTimeExtensions
 	{
@@ -17,7 +15,7 @@ namespace BclExtensionMethods
 
 		public static bool IsWeekday(this DateTime date)
 		{
-			return !IsWeekday(date);
+			return !IsWeekend(date);
 		}
 
 		public static DateTime FirstDayOfTheMonth(this DateTime date)
