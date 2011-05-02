@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enumerables\Zip\ZipExtensions.cs" />
     <Compile Include="NumericExtensions.cs" />
     <Compile Include="Pagination\InvalidSortException.cs" />
     <Compile Include="Pagination\PagedListExtensions.cs" />
