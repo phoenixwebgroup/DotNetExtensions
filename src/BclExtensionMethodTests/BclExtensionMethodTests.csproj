@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DaysTests.cs" />
+    <Compile Include="Pagination\SortFieldExtensionTests.cs" />
     <Compile Include="PartitionExtensionTests.cs" />
     <Compile Include="InExtensionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

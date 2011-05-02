@@ -36,7 +36,13 @@ namespace BclExtensionMethods
 		public static bool None<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
 		{
 			return source == null
-			       || !source.Any(predicate);
+				   || !source.Any(predicate);
+		}
+
+		public static bool None<TSource>(this IEnumerable<TSource> source)
+		{
+			return source == null
+				   || !source.Any();
 		}
 
 		/// <summary>

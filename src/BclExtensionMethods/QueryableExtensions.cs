@@ -21,7 +21,13 @@
 		public static bool None<TSource>(this IQueryable<TSource> source, Expression<Func<TSource, bool>> predicate)
 		{
 			return source == null
-			       || !source.Any(predicate);
+				   || !source.Any(predicate);
+		}
+
+		public static bool None<TSource>(this IQueryable<TSource> source)
+		{
+			return source == null
+				   || !source.Any();
 		}
 	}
 }
