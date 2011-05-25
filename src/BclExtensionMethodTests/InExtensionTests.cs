@@ -1,5 +1,6 @@
 ﻿namespace BclExtensionMethodTests
 {
+	using System;
 	using BclExtensionMethods;
 	using NUnit.Framework;
 
@@ -25,6 +26,12 @@
 		{
 			Expect(TestEnum.A.In(TestEnum.B, TestEnum.C), Is.False);
 			Expect(TestEnum.A.In(TestEnum.A), Is.True);
+		}
+
+		[Test]
+		public void In_Types()
+		{
+			Expect(typeof(DateTime).In(typeof(DateTime)));
 		}
 	}
 }

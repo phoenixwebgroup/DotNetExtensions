@@ -67,5 +67,14 @@ namespace BclExtensionMethods
 				.Select(builder.Append);
 			return builder.ToString();
 		}
+
+		/// <summary>
+		/// 	Adds option to use a particular string comparison to a Contains query
+		/// 	DO NOT USE THIS WITH IQUERYABLE
+		/// </summary>
+		public static bool Has(this string source, string search, StringComparison comparison)
+		{
+			return source.IndexOf(search, comparison) >= 0;
+		}
 	}
 }

@@ -9,6 +9,11 @@
 	{
 		private readonly DateTime _Date;
 
+		public Date(string date)
+		{
+			_Date = Convert.ToDateTime(date);
+		}
+
 		public Date(DateTime date)
 		{
 			_Date = date.Date;
