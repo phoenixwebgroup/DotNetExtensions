@@ -1,0 +1,15 @@
+﻿<viewdata model="PersonViewModel"/>
+<h2>Product</h2>
+
+    <fieldset>
+        <legend>Fields</legend>
+        <p>
+			!{this.TextBox("Name").Value(Model.Name).AutoLabel()}
+        </p>
+        <p>
+			!{this.TextBox("BirthDate").Value(Model.BirthDate).AutoLabel()}
+        </p>
+        <p>
+			!{this.Select("BirthState").Options(Model.AllStates, x=> x.Id, x=> x.Name).Selected(Model.StateId).AutoLabel()}
+        </p>
+    </fieldset>

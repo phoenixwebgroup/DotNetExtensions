@@ -1,0 +1,14 @@
+﻿<viewdata model="MvcActionFilers.Controllers.ProductViewModel"/>
+<h2>Product</h2>
+
+    <fieldset>
+        <legend>Fields</legend>
+        <p>
+            Id:
+            ${Model.Id}
+        </p>
+        <p>
+            Name:
+            ${Model.Name}
+        </p>
+    </fieldset>
