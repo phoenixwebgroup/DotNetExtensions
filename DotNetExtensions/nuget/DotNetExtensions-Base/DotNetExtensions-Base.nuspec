@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>DotNetExtensions-Base</id>
+    <version>1.0.0</version>
+    <authors>https://github.com/g0t4/DotNetExtensions</authors>
+    <owners></owners>
+    <licenseUrl>https://github.com/g0t4/DotNetExtensions</licenseUrl>
+    <projectUrl>https://github.com/g0t4/DotNetExtensions</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Additions to the .net framework</description>
+    <tags></tags>
+    <dependencies>
+	  <dependency id="DynamicQuery" version="1.0" />
+	  <dependency id="log4net" version="1.2.10" />
+    </dependencies>
+  </metadata>
+</package>

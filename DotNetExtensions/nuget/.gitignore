@@ -1,0 +1,6 @@
+# use glob syntax
+syntax: glob
+
+*.dll
+*.pdb
+*.[Xx][Mm][Ll]
