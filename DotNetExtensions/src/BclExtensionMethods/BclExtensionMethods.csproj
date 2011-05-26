@@ -35,6 +35,9 @@
     <Reference Include="Dynamic">
       <HintPath>..\..\packages\DynamicQuery.1.0\lib\35\Dynamic.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="PagedList, Version=1.2.1.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\PagedList.dll</HintPath>
@@ -49,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enumerables\Zip\ZipExtensions.cs" />
+    <Compile Include="Exceptions\OnException.cs" />
     <Compile Include="NumericExtensions.cs" />
     <Compile Include="Pagination\InvalidSortException.cs" />
     <Compile Include="Pagination\PagedListExtensions.cs" />
