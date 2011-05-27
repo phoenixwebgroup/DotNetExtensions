@@ -13,7 +13,8 @@
 
 		public SortField(string expression, string direction)
 		{
-			SortDirection = direction.ParseEnumValue<SortDirectionType>() ?? SortDirectionType.ASC;
+			SortDirection = direction.ToUpper()
+				.ParseEnumValue<SortDirectionType>() ?? SortDirectionType.ASC;
 			SortExpression = expression;
 		}
 
