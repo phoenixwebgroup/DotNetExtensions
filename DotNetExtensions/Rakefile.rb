@@ -10,7 +10,7 @@ task :teamcity => [:build_release]
 
 task :build => [:build_release]
 
-msbuild :build_release => [:clean] do |msb|
+msbuild :build_release => [:clean, :dep] do |msb|
   msb.properties :configuration => :Release
   msb.targets :Build
   msb.solution = $projectSolution
@@ -39,4 +39,12 @@ task :nuget_Financial => [:build] do
 	FileUtils.cp_r(Dir.glob(source), destination)
 	nugetFeedLocation = File.join($nugetFeedPath, 'DotNetExtensions-Financial')
 	sh "nuget pack " + File.join($nugetPath, 'DotNetExtensions-Financial', 'DotNetExtensions-Financial.nuspec') + " /OutputDirectory " + nugetFeedLocation
+end
+
+desc "Setup dependencies for nuget packages"
+task :dep do
+	package_folder = 'Packages'
+    FileList["**/packages.config"].each do |file|
+        sh %Q{nuget install #{file} /OutputDirectory #{package_folder}}
+    end
 end
