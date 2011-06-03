@@ -5,7 +5,7 @@
 	/// <summary>
 	/// 	A date only class to avoid nuianscens with DateTime's time portion
 	/// </summary>
-	public struct Date
+	public struct Date : IComparable<Date>
 	{
 		private readonly DateTime _Date;
 
@@ -44,6 +44,19 @@
 			return new Date(date);
 		}
 
+		public int CompareTo(Date other)
+		{
+			if (other == this)
+			{
+				return 0;
+			}
+			if (other > this)
+			{
+				return 1;
+			}
+			return -1;
+		}
+
 		public override string ToString()
 		{
 			return _Date.ToShortDateString();
@@ -77,6 +90,46 @@
 		public static bool operator >=(Date left, Date right)
 		{
 			return !(left < right);
+		}
+
+		public string ToShortDateString()
+		{
+			return _Date.ToShortDateString();
+		}
+
+		public string ToString(string dateTimeFormat)
+		{
+			return _Date.ToString(dateTimeFormat);
+		}
+
+		public string ToString(string dateTimeFormat, IFormatProvider formatProvider)
+		{
+			return _Date.ToString(dateTimeFormat, formatProvider);
+		}
+
+		public Date AddDays(int days)
+		{
+			return _Date.AddDays(days);
+		}
+
+		public Date AddMonths(int months)
+		{
+			return _Date.AddMonths(months);
+		}
+
+		public Date AddYears(int years)
+		{
+			return _Date.AddYears(years);
+		}
+
+		public bool IsWeekday()
+		{
+			return _Date.IsWeekday();
+		}
+
+		public bool IsWeekend()
+		{
+			return _Date.IsWeekend();
 		}
 	}
 }
