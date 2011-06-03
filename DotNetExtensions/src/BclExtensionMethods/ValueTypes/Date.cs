@@ -3,7 +3,7 @@
 	using System;
 
 	/// <summary>
-	/// A date only class to avoid nuianscens with DateTime's time portion
+	/// 	A date only class to avoid nuianscens with DateTime's time portion
 	/// </summary>
 	public struct Date
 	{
@@ -47,6 +47,36 @@
 		public override string ToString()
 		{
 			return _Date.ToShortDateString();
+		}
+
+		public static bool operator ==(Date left, Date right)
+		{
+			return left.Equals(right);
+		}
+
+		public static bool operator !=(Date left, Date right)
+		{
+			return !(left == right);
+		}
+
+		public static bool operator >(Date left, Date right)
+		{
+			return left._Date > right._Date;
+		}
+
+		public static bool operator <(Date left, Date right)
+		{
+			return left._Date < right._Date;
+		}
+
+		public static bool operator <=(Date left, Date right)
+		{
+			return !(left > right);
+		}
+
+		public static bool operator >=(Date left, Date right)
+		{
+			return !(left < right);
 		}
 	}
 }

@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateTests.cs" />
     <Compile Include="DaysTests.cs" />
     <Compile Include="NumericExtensionTests.cs" />
     <Compile Include="Pagination\SortFieldExtensionTests.cs" />
