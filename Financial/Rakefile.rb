@@ -1,7 +1,7 @@
 require 'rake'
 require 'albacore'
 
-$projectSolution = 'DotNetExtensions.sln'
+$projectSolution = 'Financial.sln'
 $artifactsPath = "build"
 $nugetFeedPath = "%PAC%/nuget"
 
@@ -21,9 +21,8 @@ task :clean do
 end
 
 task :nuget => [:build] do
-	nugetFeedLocation = File.join($nugetFeedPath, 'DotNetExtensions-Base')
-	sh "nuget pack src\\BclExtensionMethods\\BclExtensionMethods.csproj /OutputDirectory " + $nugetFeedPath + 
-		" /Exclude \"*Dynamic Expressions.html\""
+	nugetFeedLocation = File.join($nugetFeedPath, 'DotNetExtensions-Financial')
+	sh "nuget pack src\\Financial\\Financial.csproj /OutputDirectory " + $nugetFeedPath 
 end
 
 desc "Setup dependencies for nuget packages"

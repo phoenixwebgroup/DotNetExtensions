@@ -1,19 +1,17 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>DotNetExtensions-Base</id>
-    <version>1.0.0</version>
+    <id>DotNetExtensions-Financial</id>
+    <version>$version$</version>
     <authors>https://github.com/g0t4/DotNetExtensions</authors>
     <owners></owners>
     <licenseUrl>https://github.com/g0t4/DotNetExtensions</licenseUrl>
     <projectUrl>https://github.com/g0t4/DotNetExtensions</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Additions to the .net framework</description>
+    <description>Shared methods for working with financial industry projects.</description>
     <tags></tags>
     <dependencies>
-	  <dependency id="PagedList" version="1.2.1.0" />
-	  <dependency id="DynamicQuery" version="1.0" />
-	  <dependency id="log4net" version="1.2.10" />
+	  <dependency id="DotNetExtensions-Base" version="[1.0, 2.0)" />
     </dependencies>
   </metadata>
 </package>
