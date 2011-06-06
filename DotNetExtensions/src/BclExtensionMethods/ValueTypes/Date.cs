@@ -5,6 +5,7 @@
 	/// <summary>
 	/// 	A date only class to avoid nuianscens with DateTime's time portion
 	/// </summary>
+	[Serializable]
 	public struct Date : IComparable<Date>
 	{
 		private readonly DateTime _Date;
