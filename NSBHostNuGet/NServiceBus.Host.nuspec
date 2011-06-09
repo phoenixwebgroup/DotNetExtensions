@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>NServiceBus.Host</id>
+    <version>2.5</version>
+    <authors>Udi Dahan</authors>
+    <owners></owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Host for NServiceBus</description>
+    <tags>NServiceBus Host</tags>
+    <dependencies>
+      <dependency id="nservicebus" version="2.5.0.1446" />
+    </dependencies>
+  </metadata>
+</package>

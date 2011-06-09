@@ -36,5 +36,4 @@ _ReSharper*/
 *logs*
 *logfile*
 *.orig
-packages/
-Packages/
+[Pp]ackages/
