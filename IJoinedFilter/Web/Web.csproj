@@ -197,6 +197,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PreBuildEvent>Nuget.exe install $(ProjectDir)packages.config -o $(SolutionDir)Packages</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

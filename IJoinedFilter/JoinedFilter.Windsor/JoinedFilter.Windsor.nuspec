@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>MVC-JoinedFilter.Windsor</id>
+    <version>$version$</version>
+    <authors>Wes McClure</authors>
+    <owners>Wes McClure</owners>
+    <licenseUrl>https://github.com/g0t4/DotNetExtensions</licenseUrl>
+    <projectUrl>https://github.com/g0t4/DotNetExtensions</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Global filters for ASP.Net MVC2+ Windsor Adapter</description>
+    <tags>MVC Filters JoinedFilter IJoinedFilter Windsor</tags>
+	<dependencies>
+      <dependency id="MVC-JoinedFilter" version="1.1" />
+      <dependency id="Castle.Windsor" version="2.5" />
+	</dependencies>
+  </metadata>
+</package>
