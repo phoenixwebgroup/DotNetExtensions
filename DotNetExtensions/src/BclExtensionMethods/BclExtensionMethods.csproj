@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caches\ExpiringCache.cs" />
     <Compile Include="Enumerables\Zip\ZipExtensions.cs" />
     <Compile Include="Exceptions\OnException.cs" />
     <Compile Include="NumericExtensions.cs" />

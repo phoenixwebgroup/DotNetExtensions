@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caches\MoreCacheTests.cs" />
     <Compile Include="DateTests.cs" />
     <Compile Include="DaysTests.cs" />
     <Compile Include="NumericExtensionTests.cs" />
