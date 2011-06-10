@@ -3,7 +3,7 @@ require 'albacore'
 
 $projectSolution = 'Financial.sln'
 $artifactsPath = "build"
-$nugetFeedPath = "%PAC%/nuget"
+$nugetFeedPath = ENV["NuGetDevFeed"]
 
 task :teamcity => [:build_release]
 
@@ -21,7 +21,6 @@ task :clean do
 end
 
 task :nuget => [:build] do
-	nugetFeedLocation = File.join($nugetFeedPath, 'DotNetExtensions-Financial')
 	sh "nuget pack src\\Financial\\Financial.csproj /OutputDirectory " + $nugetFeedPath 
 end
 

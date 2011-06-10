@@ -3,7 +3,7 @@ require 'albacore'
 
 $projectSolution = 'DotNetExtensions.sln'
 $artifactsPath = "build"
-$nugetFeedPath = "%PAC%/nuget"
+$nugetFeedPath = ENV["NuGetDevFeed"]
 
 task :teamcity => [:build_release]
 
@@ -21,7 +21,6 @@ task :clean do
 end
 
 task :nuget => [:build] do
-	nugetFeedLocation = File.join($nugetFeedPath, 'DotNetExtensions-Base')
 	sh "nuget pack src\\BclExtensionMethods\\BclExtensionMethods.csproj /OutputDirectory " + $nugetFeedPath + 
 		" /Exclude \"*Dynamic Expressions.html\""
 end
