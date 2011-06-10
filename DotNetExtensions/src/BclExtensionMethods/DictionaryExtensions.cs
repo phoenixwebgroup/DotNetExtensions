@@ -13,5 +13,14 @@ namespace BclExtensionMethods
 		{
 			return dictionary.ContainsValue(value);
 		}
+
+		public static V GetValueOrDefault<K, V>(this IDictionary<K, V> dictionary, K key)
+		{
+			if (dictionary.ContainsKey(key))
+			{
+				return dictionary[key];
+			}
+			return default(V);
+		}
 	}
 }
