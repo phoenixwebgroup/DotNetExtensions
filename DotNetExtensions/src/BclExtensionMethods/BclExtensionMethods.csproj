@@ -59,6 +59,7 @@
     <Compile Include="Enumerables\Zip\ZipExtensions.cs" />
     <Compile Include="Exceptions\OnException.cs" />
     <Compile Include="NumericExtensions.cs" />
+    <Compile Include="Observables\ObservableExtensions.cs" />
     <Compile Include="Pagination\InvalidSortException.cs" />
     <Compile Include="Pagination\PagedListExtensions.cs" />
     <Compile Include="Pagination\PagingCriteria.cs" />
