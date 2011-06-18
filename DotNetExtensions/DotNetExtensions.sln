@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BclExtensionMethods", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BclExtensionMethodTests", "src\BclExtensionMethodTests\BclExtensionMethodTests.csproj", "{BCDECFA6-7F10-4941-BFC7-8BD564DE5E1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "src\ExceptionSamples\Services.csproj", "{E79A3786-1952-4506-A07F-266D6C0704F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{BCDECFA6-7F10-4941-BFC7-8BD564DE5E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCDECFA6-7F10-4941-BFC7-8BD564DE5E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCDECFA6-7F10-4941-BFC7-8BD564DE5E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E79A3786-1952-4506-A07F-266D6C0704F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E79A3786-1952-4506-A07F-266D6C0704F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E79A3786-1952-4506-A07F-266D6C0704F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E79A3786-1952-4506-A07F-266D6C0704F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
