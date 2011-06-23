@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Caches\ExpiringCache.cs" />
+    <Compile Include="Enumerables\InteractiveExtensions.cs" />
     <Compile Include="Enumerables\Zip\ZipExtensions.cs" />
     <Compile Include="Exceptions\OnException.cs" />
     <Compile Include="NumericExtensions.cs" />

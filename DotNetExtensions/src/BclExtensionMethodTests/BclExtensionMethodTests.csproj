@@ -55,6 +55,7 @@
     <Compile Include="Caches\MoreCacheTests.cs" />
     <Compile Include="DateTests.cs" />
     <Compile Include="DaysTests.cs" />
+    <Compile Include="Enumerables\InteractiveExtensionsTests.cs" />
     <Compile Include="NumericExtensionTests.cs" />
     <Compile Include="Pagination\SortFieldExtensionTests.cs" />
     <Compile Include="PartitionExtensionTests.cs" />
