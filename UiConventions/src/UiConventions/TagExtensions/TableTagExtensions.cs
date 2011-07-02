@@ -29,6 +29,10 @@ namespace HtmlTags.Extensions
 			return tag;
 		}
 
-		// todo row span - sweep up more extensions from other projects
+		public static HtmlTag RowSpan(this HtmlTag tag, int rowSpan)
+		{
+			tag.Attr(HtmlAttributeConstants.Rowspan, rowSpan);
+			return tag;
+		}
 	}
 }

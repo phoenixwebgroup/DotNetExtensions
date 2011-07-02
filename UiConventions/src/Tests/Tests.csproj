@@ -37,17 +37,21 @@
     <Reference Include="Dynamic">
       <HintPath>..\packages\DynamicQuery.1.0\lib\35\Dynamic.dll</HintPath>
     </Reference>
-    <Reference Include="FubuCore">
-      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.2\lib\net35\FubuCore.dll</HintPath>
+    <Reference Include="FubuCore, Version=0.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.6\lib\net35\FubuCore.dll</HintPath>
     </Reference>
-    <Reference Include="FubuMVC.Core">
-      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.2\lib\net35\FubuMVC.Core.dll</HintPath>
+    <Reference Include="FubuMVC.Core, Version=0.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.6\lib\net35\FubuMVC.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FubuMVC.UI">
-      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.2\lib\net35\FubuMVC.UI.dll</HintPath>
+    <Reference Include="FubuMVC.UI, Version=0.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.6\lib\net35\FubuMVC.UI.dll</HintPath>
     </Reference>
-    <Reference Include="HtmlTags">
-      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.2\lib\net35\HtmlTags.dll</HintPath>
+    <Reference Include="HtmlTags, Version=0.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.6\lib\net35\HtmlTags.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>

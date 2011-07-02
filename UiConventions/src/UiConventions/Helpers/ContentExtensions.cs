@@ -4,6 +4,7 @@ namespace HtmlTags.UI.Helpers
 	using System.IO;
 	using System.Web;
 	using System.Web.Mvc;
+	using Constants;
 
 	/// <summary>
 	/// Extensions that just work to add include files in html
@@ -12,6 +13,14 @@ namespace HtmlTags.UI.Helpers
 	{
 		public static string DefaultScriptLocation = "~/Content";
 		public static string DefaultStyleSheetLocation = "~/Content";
+		public static string DefaultImageLocation = "~/Content";
+		public static string DefaultContentLocation = "~/Content";
+
+		public static HtmlTag Image(this HtmlHelper html, string location)
+		{
+			var path = GetPath(DefaultImageLocation, location);
+			return Tags.Image.Attr(HtmlAttributeConstants.Src, path);
+		}
 
 		/// <summary>
 		/// Include a style sheet, relative or absolute path, uses DefaultStyleSheetLocation
@@ -47,6 +56,11 @@ namespace HtmlTags.UI.Helpers
 				return location;
 			}
 			return VirtualPathUtility.ToAbsolute(Path.Combine(defaultRoot, location));
+		}
+
+		public static string GetPath(this HtmlHelper helper, string location)
+		{
+			return GetPath(DefaultContentLocation, location);
 		}
 
 		public static string GetPath(string location)

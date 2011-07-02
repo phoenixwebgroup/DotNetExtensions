@@ -22,6 +22,7 @@ end
 
 task :nuget => [:build] do
 	sh "nuget pack src\\UiConventions\\UiConventions.csproj /OutputDirectory " + $nugetFeedPath
+	sh "nuget pack src\\UiConventions.ExpertPdf\\UiConventions.ExpertPdf.csproj /OutputDirectory " + $nugetFeedPath
 end
 
 desc "Setup dependencies for nuget packages"
