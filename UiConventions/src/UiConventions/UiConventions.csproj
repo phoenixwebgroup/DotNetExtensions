@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37508CC9-706B-4405-815A-38CBA3F2E7A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HtmlTags.UI</RootNamespace>
+    <AssemblyName>HtmlTags.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BclExtensionMethods, Version=1.1.4182.18292, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetExtensions-Base.1.1.4182.18292\lib\net40\BclExtensionMethods.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuCore">
+      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.2\lib\net35\FubuCore.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Core">
+      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.2\lib\net35\FubuMVC.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.UI">
+      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.2\lib\net35\FubuMVC.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlTags">
+      <HintPath>..\packages\DotNetExtensions-HtmlTags.0.4.2\lib\net35\HtmlTags.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.2.1.0\lib\40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reactive, Version=1.0.10605.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Rx-Main.1.0.10605\lib\Net4\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\AjaxOptionsAttribute.cs" />
+    <Compile Include="Attributes\ButtonActionAttribute.cs" />
+    <Compile Include="Attributes\CheckBoxListAttribute.cs" />
+    <Compile Include="ClickToEdit\ClickToEditAttribute.cs" />
+    <Compile Include="Attributes\CloseWindowAttribute.cs" />
+    <Compile Include="Attributes\DateAndTimeAttribute.cs" />
+    <Compile Include="Attributes\DateOnlyAttribute.cs" />
+    <Compile Include="Attributes\HiddenAttribute.cs" />
+    <Compile Include="Attributes\MultilineAttribute.cs" />
+    <Compile Include="Attributes\NewWindowAttribute.cs" />
+    <Compile Include="Attributes\OptionsFromAttribute.cs" />
+    <Compile Include="Attributes\PasswordAttribute.cs" />
+    <Compile Include="Attributes\WithAllOption.cs" />
+    <Compile Include="Attributes\WithBlankOption.cs" />
+    <Compile Include="Attributes\YesOrNoAttribute.cs" />
+    <Compile Include="AutoComplete\AutoCompleteCriteria.cs" />
+    <Compile Include="AutoComplete\AutoCompleteExtensions.cs" />
+    <Compile Include="AutoComplete\AutoCompleteInput.cs" />
+    <Compile Include="AutoComplete\AutoCompleteBuilder.cs" />
+    <Compile Include="Builders\BaseElementBuilder.cs" />
+    <Compile Include="Builders\CalendarTextBox.cs" />
+    <Compile Include="Builders\CheckBoxBuilder.cs" />
+    <Compile Include="Builders\CheckBoxListBuilder.cs" />
+    <Compile Include="ClickToEdit\ClickToEditModifier.cs" />
+    <Compile Include="Builders\DateAndTimePickerBuilder.cs" />
+    <Compile Include="Builders\DateAndTimeTextBoxTag.cs" />
+    <Compile Include="Builders\DateOnlyBuilder.cs" />
+    <Compile Include="Builders\DatePickerBuilder.cs" />
+    <Compile Include="Builders\DefaultDisplay.cs" />
+    <Compile Include="Builders\DefaultEditor.cs" />
+    <Compile Include="Builders\DefaultLabeler.cs" />
+    <Compile Include="Builders\EnumDisplayBuilder.cs" />
+    <Compile Include="Builders\EnumDropDownBuilder.cs" />
+    <Compile Include="Attributes\ExcludeFromSelect.cs" />
+    <Compile Include="Builders\FlagsEnumDisplayBuilder.cs" />
+    <Compile Include="Builders\HiddenInputBuilder.cs" />
+    <Compile Include="Builders\HiddenLabelBuilder.cs" />
+    <Compile Include="Builders\IElementBuilderSecurity.cs" />
+    <Compile Include="Attributes\MultiSelectAttribute.cs" />
+    <Compile Include="Builders\MonthOfYearBuilder.cs" />
+    <Compile Include="Builders\MultiSelectListBuilder.cs" />
+    <Compile Include="Builders\PasswordBuilder.cs" />
+    <Compile Include="Builders\SelectBuilder.cs" />
+    <Compile Include="Builders\AjaxSelectListBuilder.cs" />
+    <Compile Include="Builders\SelectListBuilder.cs" />
+    <Compile Include="Builders\TextAreaBuilder.cs" />
+    <Compile Include="ClickToEdit\ClickToEditExtensions.cs" />
+    <Compile Include="Conventions\CommandResult.cs" />
+    <Compile Include="Conventions\DottedElementNamingConvention.cs" />
+    <Compile Include="Conventions\FiltersConventions.cs" />
+    <Compile Include="Conventions\FiltersFilterButtonConvention.cs" />
+    <Compile Include="Conventions\FiltersResetButtonConvention.cs" />
+    <Compile Include="Conventions\IFiltersFilterButtonConvention.cs" />
+    <Compile Include="Conventions\IFiltersResetButtonConvention.cs" />
+    <Compile Include="Conventions\IPageActionsSecurity.cs" />
+    <Compile Include="Conventions\PageActionConvention.cs" />
+    <Compile Include="ExceptionHelpers.cs" />
+    <Compile Include="Exports\ActionExtensions.cs" />
+    <Compile Include="Exports\IHtmlToPdfConverter.cs" />
+    <Compile Include="Exports\PdfPageSize.cs" />
+    <Compile Include="Exports\CsvExportVisitor.cs" />
+    <Compile Include="Exports\ExportCell.cs" />
+    <Compile Include="Exports\ExportDocument.cs" />
+    <Compile Include="Exports\ExportDocumentResult.cs" />
+    <Compile Include="Exports\ExportEventArgs.cs" />
+    <Compile Include="Exports\ExportFromTable.cs" />
+    <Compile Include="Exports\ExportImage.cs" />
+    <Compile Include="Exports\ExportList.cs" />
+    <Compile Include="Exports\ExportListItem.cs" />
+    <Compile Include="Exports\ExportParagraph.cs" />
+    <Compile Include="Exports\ExportPdfHelper.cs" />
+    <Compile Include="Exports\ExportRow.cs" />
+    <Compile Include="Exports\ExportTable.cs" />
+    <Compile Include="Exports\ExportVisitor.cs" />
+    <Compile Include="Exports\HtmlExportVisitor.cs" />
+    <Compile Include="Exports\HtmlTageExportListExtensions.cs" />
+    <Compile Include="Exports\HtmlTagExportTableExtensions.cs" />
+    <Compile Include="Exports\HtmlTagImageExtensions.cs" />
+    <Compile Include="Exports\HtmlTagToExportVisitor.cs" />
+    <Compile Include="Exports\IExportableViewModel.cs" />
+    <Compile Include="Exports\IExportVisitor.cs" />
+    <Compile Include="Exports\IHaveACustomHtmlExport.cs" />
+    <Compile Include="Exports\IHaveACustomPdfExport.cs" />
+    <Compile Include="Exports\OnExport_ReplaceWithExportDocumentResult.cs" />
+    <Compile Include="Exports\PDFPageOrientation.cs" />
+    <Compile Include="Helpers\AjaxForms.cs" />
+    <Compile Include="Helpers\ContentExtensions.cs" />
+    <Compile Include="Helpers\JQueryRowSelect.cs" />
+    <Compile Include="Helpers\JQuerySelectList.cs" />
+    <Compile Include="Helpers\PageActions.cs" />
+    <Compile Include="Helpers\UrlHelpers.cs" />
+    <Compile Include="Conventions\HtmlConventionsRegistryBase.cs" />
+    <Compile Include="HtmlAttributeEncodingNot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IFilterLocator.cs" />
+    <Compile Include="Helpers\JQueryHelpers.cs" />
+    <Compile Include="Helpers\Template\TemplateHelpers.cs" />
+    <Compile Include="Builders\YesOrNoBuilder.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
+    <Compile Include="Attributes\GetAttribute.cs" />
+    <Compile Include="Helpers\Base.cs" />
+    <Compile Include="Helpers\Html.cs" />
+    <Compile Include="Helpers\ViewListHelpers.cs" />
+    <Compile Include="Conventions\ILabelingConvention.cs" />
+    <Compile Include="Conventions\IPageActionConvention.cs" />
+    <Compile Include="Conventions\ISaveOrCancelConvention.cs" />
+    <Compile Include="Helpers\JqGridExtensions.cs" />
+    <Compile Include="Conventions\LabelingConvention.cs" />
+    <Compile Include="ModelBinders\DecimalModelBinder.cs" />
+    <Compile Include="ModelBinders\ModelBinderRegistryBase.cs" />
+    <Compile Include="ModelBinders\MonthOfYearModelBinder.cs" />
+    <Compile Include="Modifiers\ElementModifier.cs" />
+    <Compile Include="Conventions\NoElementBuilderSecurity.cs" />
+    <Compile Include="OptionItem.cs" />
+    <Compile Include="OutputType.cs" />
+    <Compile Include="Attributes\PostAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Conventions\SpaceBeforeCapitalsLabelingConvention.cs" />
+    <Compile Include="TableResult\CsvExcludeAttribute.cs" />
+    <Compile Include="Validation\NumericValidationModifier.cs" />
+    <Compile Include="Validation\DateValidationModifier.cs" />
+    <Compile Include="Validation\EmailValidationModifier.cs" />
+    <Compile Include="Validation\EmailAttribute.cs" />
+    <Compile Include="Validation\RangeValidationModifier.cs" />
+    <Compile Include="Validation\RequiredValidationModifier.cs" />
+    <Compile Include="Scaffolding\IAmAForm.cs" />
+    <Compile Include="Scaffolding\ScaffoldedForm.cs" />
+    <Compile Include="Scaffolding\ScaffoldedView.cs" />
+    <Compile Include="Scaffolding\ScaffoldFilter.cs" />
+    <Compile Include="Scaffolding\ScaffoldIgnore.cs" />
+    <Compile Include="TableResult\CsvExportAttribute.cs" />
+    <Compile Include="TableResult\CsvResult.cs" />
+    <Compile Include="TableResult\TableFilterAttribute.cs" />
+    <Compile Include="TableResult\TableInputModel.cs" />
+    <Compile Include="TableResult\TableOutputType.cs" />
+    <Compile Include="TableResult\TableResult.cs" />
+    <Compile Include="TableResult\TableResultExtensions.cs" />
+    <Compile Include="Conventions\TableTagConventionExtensions.cs" />
+    <Compile Include="TagExtensions\FormExtensions.cs" />
+    <Compile Include="TagExtensions\HtmlTagExtensions.cs" />
+    <Compile Include="TagExtensions\SelectTagExtensions.cs" />
+    <Compile Include="TagExtensions\TableTagExtensions.cs" />
+    <Compile Include="Conventions\TagFactoryExtensions.cs" />
+    <Compile Include="Attributes\UnsealedAcceptVerbsAttribute.cs" />
+    <Compile Include="Validation\StringLengthValidationModifier.cs" />
+    <Compile Include="Validation\UrlAttribute.cs" />
+    <Compile Include="Validation\UrlValidationModifier.cs" />
+    <Compile Include="Conventions\ViewConventionExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

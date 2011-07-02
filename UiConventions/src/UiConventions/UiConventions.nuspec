@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>DotNetExtensions-UiConventions</id>
+    <version>$version$</version>
+    <authors>https://github.com/g0t4/DotNetExtensions</authors>
+    <owners></owners>
+    <licenseUrl>https://github.com/g0t4/DotNetExtensions</licenseUrl>
+    <projectUrl>https://github.com/g0t4/DotNetExtensions</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Convention extensions to HtmlTags and other UI components</description>
+    <tags>HtmlTags UI Conventions MVC</tags>
+  </metadata>
+</package>

@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiConventions", "UiConventions\UiConventions.csproj", "{37508CC9-706B-4405-815A-38CBA3F2E7A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F0CE80A8-00A4-4DC3-9705-03B4246118D7}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\AjaxForms.js = Scripts\AjaxForms.js
+		Scripts\AutoCompleteExtensions.js = Scripts\AutoCompleteExtensions.js
+		Scripts\FilterFormAutoSubmit.js = Scripts\FilterFormAutoSubmit.js
+		Scripts\FilterFormJqGrid.js = Scripts\FilterFormJqGrid.js
+		Scripts\FilterFormNoAutoSubmit.js = Scripts\FilterFormNoAutoSubmit.js
+		Scripts\JQueryRowSelect.js = Scripts\JQueryRowSelect.js
+		Scripts\monthpicker.js = Scripts\monthpicker.js
+		Scripts\PageActions.JqGrid.js = Scripts\PageActions.JqGrid.js
+		Scripts\PageActions.js = Scripts\PageActions.js
+		Scripts\PageActions.RowSelect.js = Scripts\PageActions.RowSelect.js
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{3B55418F-544C-4FC6-B0AA-D6998D08742A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37508CC9-706B-4405-815A-38CBA3F2E7A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37508CC9-706B-4405-815A-38CBA3F2E7A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37508CC9-706B-4405-815A-38CBA3F2E7A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37508CC9-706B-4405-815A-38CBA3F2E7A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B55418F-544C-4FC6-B0AA-D6998D08742A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B55418F-544C-4FC6-B0AA-D6998D08742A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B55418F-544C-4FC6-B0AA-D6998D08742A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B55418F-544C-4FC6-B0AA-D6998D08742A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
