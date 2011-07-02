@@ -31,16 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ephtmltopdf">
-      <HintPath>..\..\lib\ExpertPdf\ephtmltopdf.dll</HintPath>
+    <Reference Include="ephtmltopdf, Version=2.8.0.21874, Culture=neutral, PublicKeyToken=5b5f377bc08a4d32, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ExpertPdf.2.8.0.21874\lib\ephtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlTags.UI, Version=2.1.4199.37401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetExtensions-UiConventions.2.1.4199.37401\lib\net40\HtmlTags.UI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExpertPdfConverter.cs" />
@@ -52,12 +53,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UiConventions\UiConventions.csproj">
-      <Project>{37508CC9-706B-4405-815A-38CBA3F2E7A6}</Project>
-      <Name>UiConventions</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

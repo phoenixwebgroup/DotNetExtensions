@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiConventions.ExpertPdf", "UiConventions.ExpertPdf.csproj", "{92F036C1-EF09-4129-BDD4-D3D0C930F75B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiConventions.ExpertPdf", "UiConventions.ExpertPdf\\UiConventions.ExpertPdf.csproj", "{92F036C1-EF09-4129-BDD4-D3D0C930F75B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
