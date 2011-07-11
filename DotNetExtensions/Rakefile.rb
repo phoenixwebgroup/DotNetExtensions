@@ -4,6 +4,7 @@ require 'albacore'
 $projectSolution = 'DotNetExtensions.sln'
 $artifactsPath = "build"
 $nugetFeedPath = ENV["NuGetDevFeed"]
+$srcPath = File.expand_path('src')
 
 task :teamcity => [:build_release]
 
@@ -18,6 +19,11 @@ end
 task :clean do
     puts "Cleaning"
     FileUtils.rm_rf $artifactsPath
+	bins = FileList[File.join($srcPath, "**/bin")].map{|f| File.expand_path(f)}
+	bins.each do |file|
+		sh %Q{rmdir /S /Q "#{file}"}
+		#sh 
+    end
 end
 
 task :nuget => [:build] do
