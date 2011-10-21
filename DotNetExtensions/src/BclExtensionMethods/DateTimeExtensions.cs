@@ -60,5 +60,15 @@ namespace BclExtensionMethods
 			}
 			return date.AddDays(-1);
 		}
+
+		/// <summary>
+		/// Get the end of the given date's day (last tick of day)
+		/// </summary>
+		/// <param name="day"></param>
+		/// <returns></returns>
+		public static DateTime GetEndOfDay(this DateTime day)
+		{
+			return day.Date.AddDays(1).AddTicks(-1);
+		}
 	}
 }
