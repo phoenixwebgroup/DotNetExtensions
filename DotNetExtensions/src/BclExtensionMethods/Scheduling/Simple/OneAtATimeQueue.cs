@@ -13,22 +13,29 @@
 	{
 		private readonly Subject<Task> _ScheduledTasks = new Subject<Task>();
 
-		public OneAtATimeQueue()
+		/// <summary>
+		/// 	Add a task, not yet started, to be run
+		/// </summary>
+		public void AddTask(Task task)
 		{
+			Task.Factory.StartNew(() => _ScheduledTasks.OnNext(task));
+		}
+
+		private IDisposable _Runner;
+
+		public void Start()
+		{
+			DisposableExtesions.TryDispose(_Runner);
+
 			// Synchronize forces a buffer so that only one event is published to the Observer at a time, and the Observer runs the task synchrnously from start to finish.
 			_Runner = _ScheduledTasks
 				.Synchronize()
 				.Subscribe(t => OnException.Continue(t.RunSynchronously));
 		}
 
-		/// <summary>
-		/// 	Add a task, not yet started, to be run
-		/// </summary>
-		public void AddTask(Task task)
+		public void Stop()
 		{
-			_ScheduledTasks.OnNext(task);
+			DisposableExtesions.TryDispose(_Runner);
 		}
-
-		private IDisposable _Runner;
 	}
 }
