@@ -17,5 +17,10 @@
 			}
 			return number*(decimal) Math.Pow(10, places);
 		}
+
+		public static bool IsMultipleOf(this int number, int multiple)
+		{
+			return number % multiple == 0;
+		}
 	}
 }
