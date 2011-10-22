@@ -6,19 +6,29 @@
 	{
 		// todo this could use some tests, also looks like someone else's code, we should attribute it
 
-		public static string TimeSince(DateTime d)
+		/// <summary>
+		/// Get the time since in human readable terms given time in the past.
+		/// </summary>
+		/// <param name="timeInThePast"></param>
+		/// <param name="currentTime">Optionally override the time compared to to determine the elapsed time.</param>
+		public static string TimeSince(this DateTime timeInThePast, DateTime? currentTime = null)
 		{
-			// 1.
-			// Get time span elapsed since the date.
-			TimeSpan s = DateTime.Now.Subtract(d);
+			var elapsedTime = DateTime.Now.Subtract(timeInThePast);
+			return TimeSince(elapsedTime);
+		}
 
+		/// <summary>
+		/// Get the time since in human readable terms given a pre calculated timespan from the current time.
+		/// </summary>
+		public static string TimeSince(this TimeSpan elapsedTime)
+		{
 			// 2.
 			// Get total number of days elapsed.
-			int dayDiff = (int)s.TotalDays;
+			int dayDiff = (int) elapsedTime.TotalDays;
 
 			// 3.
 			// Get total number of seconds elapsed.
-			int secDiff = (int)s.TotalSeconds;
+			int secDiff = (int) elapsedTime.TotalSeconds;
 
 			// 4.
 			// Don't allow out of range values.
@@ -48,7 +58,7 @@
 				if (secDiff < 3600)
 				{
 					return string.Format("{0} minutes ago",
-						Math.Floor((double)secDiff / 60));
+					                     Math.Floor((double) secDiff/60));
 				}
 				// D.
 				// Less than 2 hours ago.
@@ -61,7 +71,7 @@
 				if (secDiff < 86400)
 				{
 					return string.Format("{0} hours ago",
-						Math.Floor((double)secDiff / 3600));
+					                     Math.Floor((double) secDiff/3600));
 				}
 			}
 			// 6.
@@ -73,12 +83,12 @@
 			if (dayDiff < 7)
 			{
 				return string.Format("{0} days ago",
-				dayDiff);
+				                     dayDiff);
 			}
 			if (dayDiff < 31)
 			{
 				return string.Format("{0} weeks ago",
-				Math.Ceiling((double)dayDiff / 7));
+				                     Math.Ceiling((double) dayDiff/7));
 			}
 			return null;
 		}
