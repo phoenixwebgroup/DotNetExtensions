@@ -76,5 +76,17 @@ namespace BclExtensionMethods
 		{
 			return source.IndexOf(search, comparison) >= 0;
 		}
+
+		/// <summary>
+		/// Null safe trimming of an object's string representation
+		/// </summary>
+		public static string Trimmed(this object source)
+		{
+			if (source == null)
+			{
+				return string.Empty;
+			}
+			return source.ToString().Trim();
+		}
 	}
 }
