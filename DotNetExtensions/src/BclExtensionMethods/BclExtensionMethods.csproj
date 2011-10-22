@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Caches\ExpiringCache.cs" />
+    <Compile Include="CodeContext\StackHelpers.cs" />
     <Compile Include="Concurrency\ConcurrentCollection.cs" />
     <Compile Include="Dynamic\AccessPrivates.cs" />
     <Compile Include="Email\Email.cs" />
