@@ -69,6 +69,7 @@
     <Compile Include="Email\WriteToDiscEmailer.cs" />
     <Compile Include="Enumerables\Zip\ZipExtensions.cs" />
     <Compile Include="Exceptions\OnException.cs" />
+    <Compile Include="Friendly\Friendly.cs" />
     <Compile Include="Msmq\MsmqHelper.cs" />
     <Compile Include="NumericExtensions.cs" />
     <Compile Include="Observables\ObservableExtensions.cs" />
