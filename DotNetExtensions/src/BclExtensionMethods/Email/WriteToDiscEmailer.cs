@@ -1,7 +1,9 @@
 namespace BclExtensionMethods.Email
 {
+	using System;
 	using System.IO;
 	using System.Net.Mail;
+	using System.Reflection;
 
 	/// <summary>
 	/// 	Writing emails to disc in eml format, can be used to write to an IIS pickup directory too
@@ -11,7 +13,13 @@ namespace BclExtensionMethods.Email
 		/// <summary>
 		/// 	Directory to write emails to
 		/// </summary>
-		public static string EmailDirectory = @"DebugEmails";
+		public static string EmailDirectory;
+
+		static WriteToDiscEmailer()
+		{
+			var path = Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath);
+			Path.Combine(path, @"DebugEmails");
+		}
 
 		public override void Send(MailMessage message)
 		{
