@@ -18,7 +18,7 @@ namespace BclExtensionMethods.Email
 		static WriteToDiscEmailer()
 		{
 			var path = Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath);
-			Path.Combine(path, @"DebugEmails");
+			EmailDirectory = Path.Combine(path, @"DebugEmails");
 		}
 
 		public override void Send(MailMessage message)
