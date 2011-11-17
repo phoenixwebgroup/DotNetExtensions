@@ -20,7 +20,7 @@
 			{
 				throw new ArgumentNullException("selector");
 			}
-			return new StaticPagedList<TResult>(source.AsEnumerable().Select(selector), source.PageIndex, source.PageSize, source.TotalItemCount);
+			return new StaticPagedList<TResult>(source.AsEnumerable().Select(selector), source.PageNumber, source.PageSize, source.TotalItemCount);
 		}
 
 		public static IPagedList<TSource> SortToPagedList<TSource>(this IEnumerable<TSource> source, PagingCriteria pagingCriteria)
@@ -47,9 +47,9 @@
 			{
 				var count = sortedSource.Count();
 				var pageSize = count == 0 ? 1 : count;
-				return sortedSource.ToPagedList(0, pageSize);
+				return sortedSource.ToPagedList(1, pageSize);
 			}
-			return sortedSource.ToPagedList(pagingCriteria.PageIndex, pagingCriteria.PageSize);
+			return sortedSource.ToPagedList(pagingCriteria.Page, pagingCriteria.PageSize);
 		}
 	}
 }
