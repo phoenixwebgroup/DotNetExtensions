@@ -6,13 +6,13 @@
 	/// 	A date only class to avoid nuianscens with DateTime's time portion
 	/// </summary>
 	[Serializable]
-	public struct Date : IComparable<Date>
+	public struct Date : IComparable<Date>, IEquatable<Date>
 	{
 		private readonly DateTime _Date;
 
 		public Date(string date)
 		{
-			_Date = Convert.ToDateTime(date);
+			_Date = Convert.ToDateTime(date).Date;
 		}
 
 		public Date(DateTime date)
@@ -53,9 +53,28 @@
 			}
 			if (other > this)
 			{
-				return 1;
+				return -1;
 			}
-			return -1;
+			return 1;
+		}
+
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (obj.GetType() != typeof (Date)) return false;
+			return Equals((Date) obj);
+		}
+
+		public override int GetHashCode()
+		{
+			return _Date.GetHashCode();
+		}
+
+		public bool Equals(Date other)
+		{
+			return other._Date.Year == _Date.Year
+			       && other._Date.Month == _Date.Month
+			       && other._Date.Day == _Date.Day;
 		}
 
 		public override string ToString()
