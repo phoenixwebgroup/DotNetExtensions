@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -25,3 +26,5 @@ using System.Runtime.InteropServices;
 [assembly: Guid("a3ab28d5-18b6-4b23-8213-d57ff232a519")]
 [assembly: AssemblyVersion("1.1.*")]
 [assembly: AssemblyFileVersion("1.1.*")]
+
+[assembly: InternalsVisibleTo("BclExtensionMethodTests")]

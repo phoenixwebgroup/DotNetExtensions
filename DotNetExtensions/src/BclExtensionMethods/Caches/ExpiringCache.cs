@@ -5,14 +5,14 @@
 	using System.Linq;
 
 	/// <summary>
-	/// Ideas ripped off of Fubu's Cache plus the idea of an expiring cache, but it uses a concurrent dictionary.
+	/// 	Ideas ripped off of Fubu's Cache plus the idea of an expiring cache, but it uses a concurrent dictionary.
 	/// </summary>
 	public class ExpiringCache<TKey, TValue>
 	{
 		public virtual TimeSpan ItemLifeSpan { get; set; }
 		public virtual Func<TKey, TValue> OnMissingOrExpired { get; set; }
 
-		private class CachedValue
+		internal class CachedValue
 		{
 			public CachedValue(TValue value, DateTime expiresAt)
 			{
@@ -28,14 +28,9 @@
 				return ExpiresAt < DateTime.Now;
 			}
 
-			#region Equality - so TryUpdate can compare instances of cached values
+			#region hashing
 
 			private readonly Guid _Identity = Guid.NewGuid();
-
-			public override bool Equals(object obj)
-			{
-				return _Identity.Equals(obj);
-			}
 
 			public override int GetHashCode()
 			{
@@ -87,13 +82,13 @@
 				}
 
 				var newValue = CreateCachedValue(OnMissingOrExpired(key));
-				_Cache.TryUpdate(key, newValue, currentValue);
+				_Cache[key] = newValue;
 				return newValue.Value;
 			}
 			set { _Cache[key] = CreateCachedValue(value); }
 		}
 
-		private CachedValue GetCurrentValue(TKey key)
+		internal CachedValue GetCurrentValue(TKey key)
 		{
 			CachedValue currentValue;
 			if (_Cache.TryGetValue(key, out currentValue))
@@ -101,7 +96,7 @@
 				return currentValue;
 			}
 			var newValue = CreateCachedValue(OnMissingOrExpired(key));
-			_Cache.TryAdd(key, newValue);
+			_Cache[key] = newValue;
 			return newValue;
 		}
 
