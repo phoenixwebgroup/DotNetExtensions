@@ -34,7 +34,7 @@
 
 			// 4.
 			// Don't allow out of range values.
-			if (dayDiff < 0 || dayDiff >= 31)
+			if (dayDiff < 0)
 			{
 				return null;
 			}
@@ -87,12 +87,8 @@
 				return string.Format("{0} days ago",
 				                     dayDiff);
 			}
-			if (dayDiff < 31)
-			{
-				return string.Format("{0} weeks ago",
-				                     Math.Ceiling((double) dayDiff/7));
-			}
-			return null;
+			return string.Format("{0} weeks ago", Math.Ceiling((double) dayDiff/7));
+			// todo in the future it would be nice to show months/years, but this would probably require the relative dates or suffer from error in # days in month / year/leap years
 		}
 	}
 }

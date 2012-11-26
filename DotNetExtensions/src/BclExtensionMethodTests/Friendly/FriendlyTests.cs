@@ -110,19 +110,13 @@
 		}
 
 		[Test]
-		public void TimeSince_GreaterThanOneWeekButLessThan31Days_ReturnsWeeks()
+		public void TimeSince_GreaterThanOneWeek_ReturnsWeeks()
 		{
 			Expect(TimeSpan.FromDays(7).TimeSince(), Is.EqualTo("1 weeks ago"));
 			Expect(TimeSpan.FromDays(14).TimeSince(), Is.EqualTo("2 weeks ago"));
 			Expect(TimeSpan.FromDays(21).TimeSince(), Is.EqualTo("3 weeks ago"));
 			Expect(TimeSpan.FromDays(28).TimeSince(), Is.EqualTo("4 weeks ago"));
-			Expect(TimeSpan.FromDays(30).TimeSince(), Is.EqualTo("5 weeks ago"));
-		}
-
-		[Test]
-		public void TimeSince_GreaterThanOneMonth_ReturnsNull()
-		{
-			Expect(TimeSpan.FromDays(32).TimeSince(), Is.Null);
+			Expect(TimeSpan.FromDays(35).TimeSince(), Is.EqualTo("5 weeks ago"));
 		}
 	}
 }
