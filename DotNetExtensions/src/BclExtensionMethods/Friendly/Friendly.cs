@@ -7,28 +7,30 @@
 		// todo this could use some tests, also looks like someone else's code, we should attribute it
 
 		/// <summary>
-		/// Get the time since in human readable terms given time in the past.
+		/// 	Get the time since in human readable terms given time in the past.
 		/// </summary>
-		/// <param name="timeInThePast"></param>
-		/// <param name="currentTime">Optionally override the time compared to to determine the elapsed time.</param>
+		/// <param name="timeInThePast"> </param>
+		/// <param name="currentTime"> Optionally override the time compared to to determine the elapsed time. </param>
 		public static string TimeSince(this DateTime timeInThePast, DateTime? currentTime = null)
 		{
-			var elapsedTime = DateTime.Now.Subtract(timeInThePast);
+			var utcNow = (currentTime ?? DateTime.UtcNow).ToUniversalTime();
+			var utcTimeInThePast = timeInThePast.ToUniversalTime();
+			var elapsedTime = utcNow.Subtract(utcTimeInThePast);
 			return TimeSince(elapsedTime);
 		}
 
 		/// <summary>
-		/// Get the time since in human readable terms given a pre calculated timespan from the current time.
+		/// 	Get the time since in human readable terms given a pre calculated timespan from the current time.
 		/// </summary>
 		public static string TimeSince(this TimeSpan elapsedTime)
 		{
 			// 2.
 			// Get total number of days elapsed.
-			int dayDiff = (int) elapsedTime.TotalDays;
+			var dayDiff = (int) elapsedTime.TotalDays;
 
 			// 3.
 			// Get total number of seconds elapsed.
-			int secDiff = (int) elapsedTime.TotalSeconds;
+			var secDiff = (int) elapsedTime.TotalSeconds;
 
 			// 4.
 			// Don't allow out of range values.

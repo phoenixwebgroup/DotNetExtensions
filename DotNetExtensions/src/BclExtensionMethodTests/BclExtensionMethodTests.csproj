@@ -60,6 +60,7 @@
     <Compile Include="DateTests.cs" />
     <Compile Include="DaysTests.cs" />
     <Compile Include="Email\ManualEmailTests.cs" />
+    <Compile Include="Friendly\FriendlyTests.cs" />
     <Compile Include="Msmq\MsmqHelperTests.cs" />
     <Compile Include="NumericExtensionTests.cs" />
     <Compile Include="Pagination\SortFieldExtensionTests.cs" />
