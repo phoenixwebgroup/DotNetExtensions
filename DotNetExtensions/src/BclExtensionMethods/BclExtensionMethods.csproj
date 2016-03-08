@@ -59,6 +59,7 @@
     <Compile Include="CodeContext\StackHelpers.cs" />
     <Compile Include="Concurrency\ConcurrentCollection.cs" />
     <Compile Include="Dynamic\AccessPrivates.cs" />
+    <Compile Include="Dynamic\DynamicCastExtensions.cs" />
     <Compile Include="Email\Email.cs" />
     <Compile Include="Email\Emailer.cs" />
     <Compile Include="Email\EmailConfiguration.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="EnumHelper.cs" />
     <Compile Include="Exceptions\OnException.cs" />
     <Compile Include="Friendly\Friendly.cs" />
+    <Compile Include="MedianExtensions.cs" />
     <Compile Include="Msmq\MsmqHelper.cs" />
     <Compile Include="NumericExtensions.cs" />
     <Compile Include="Observables\ObservableExtensions.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="Reflection\ReflectionUtilities.cs" />
     <Compile Include="Scheduling\Simple\DateTimeProvider.cs" />
     <Compile Include="Scheduling\Simple\Daily.cs" />
+    <Compile Include="Scheduling\Simple\LastInQueue.cs" />
     <Compile Include="Scheduling\Simple\OneAtATimeQueue.cs" />
     <Compile Include="Streams\StreamExtensions.cs" />
     <Compile Include="StringExtensions.cs" />

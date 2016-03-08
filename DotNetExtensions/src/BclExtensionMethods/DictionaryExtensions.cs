@@ -1,6 +1,7 @@
 namespace BclExtensionMethods
 {
 	using System.Collections.Generic;
+	using System.Linq;
 
 	public static class DictionaryExtensions
 	{
@@ -21,6 +22,16 @@ namespace BclExtensionMethods
 				return dictionary[key];
 			}
 			return default(V);
+		}
+
+		public static IEnumerable<TValue> GetValueOrEmpty<TKey, TValue>(
+			this IDictionary<TKey, IEnumerable<TValue>> dictionary, TKey key)
+		{
+			if (dictionary.ContainsKey(key))
+			{
+				return dictionary[key];
+			}
+			return Enumerable.Empty<TValue>();
 		}
 	}
 }

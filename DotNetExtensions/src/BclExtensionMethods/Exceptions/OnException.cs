@@ -17,5 +17,17 @@ namespace BclExtensionMethods.Exceptions
 				logger.Error("Error executing action", exception);
 			}
 		}
+
+		public static void Warn(Action action)
+		{
+			try
+			{
+				action();
+			}
+			catch (Exception exception)
+			{
+				LogManager.GetLogger(typeof(OnException).FullName).Warn(exception);
+			}
+		}
 	}
 }

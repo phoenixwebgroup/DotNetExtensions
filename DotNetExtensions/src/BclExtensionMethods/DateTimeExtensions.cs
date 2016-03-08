@@ -70,5 +70,10 @@ namespace BclExtensionMethods
 		{
 			return day.Date.AddDays(1).AddTicks(-1);
 		}
+
+		public static bool SameMonth(this DateTime start, DateTime end)
+		{
+			return start.Month == end.Month && start.Year == end.Year;
+		}
 	}
 }

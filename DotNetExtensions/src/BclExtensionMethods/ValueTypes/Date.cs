@@ -3,7 +3,7 @@
 	using System;
 
 	/// <summary>
-	/// 	A date only class to avoid nuianscens with DateTime's time portion
+	/// 	A date only class to avoid nuisances with DateTime's time portion
 	/// </summary>
 	[Serializable]
 	public struct Date : IComparable<Date>, IEquatable<Date>
