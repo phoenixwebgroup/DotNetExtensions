@@ -34,5 +34,15 @@ namespace HtmlTags.UI.TableResult
 			       		rows = Rows
 			       	};
 		}
+
+		public object ToDataTablesJson()
+		{
+			return new
+			{
+				data = Rows,
+				iTotalRecords = Records,
+				iTotalDisplayRecords = Records
+			};
+		}
 	}
 }
